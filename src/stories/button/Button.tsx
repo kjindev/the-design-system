@@ -13,73 +13,25 @@ export const Button = ({ type, size, Destructive, children }: Props) => {
     medium: 14,
     large: 18,
   };
-  const style = "flex items-center bg-slate-500";
-  // const style = {
-  //   display: "flex",
-  //   alignItems: "center",
-  //   border: "none",
-  //   fontSize: fontSize[size || "medium"],
-  //   cursor: Destructive ? "default" : "pointer",
-  //   fontFamily: "Noto Sans KR",
-  //   fontWeight: "400",
-  //   transition: "transform 0.25s ease-in-out",
-  //   "& span": {
-  //     marginBottom: "1px",
-  //   },
-  // };
-  if (type === "Subtle") {
+
+  const style = "flex items-center cursor-pointer px-3 py-2 rounded-xl";
+  const bgColor = Destructive ? "bg-gray-10" : "bg-main";
+  const color = Destructive ? "text-gray-20" : "text-white";
+
+  if (type === "WithIcon") {
     return (
-      <button
-        className={style}
-        // css={css(style, {
-        //   backgroundColor: Destructive ? "#e6e6e6" : subColor2,
-        //   color: Destructive ? "#8a8a8a" : mainColor,
-        //   padding: `${fontSize[size || "medium"]}px ${
-        //     fontSize[size || "medium"] * 2
-        //   }px`,
-        //   borderRadius: fontSize[size || "medium"],
-        // })}
-      >
-        <span>{children}</span>
-      </button>
-    );
-  } else if (type === "WithIcon") {
-    return (
-      <button
-      // css={css(style, {
-      //   backgroundColor: Destructive ? "#e6e6e6" : mainColor,
-      //   color: Destructive ? "#8a8a8a" : "white",
-      //   padding: `${fontSize[size || "medium"]}px ${
-      //     fontSize[size || "medium"] * 2
-      //   }px`,
-      //   borderRadius: fontSize[size || "medium"],
-      //   "& svg": {
-      //     marginRight: "7px",
-      //   },
-      //   "& span": {
-      //     // marginBottom: "2px",
-      //     paddingRight: "6px",
-      //   },
-      // })}
-      >
+      <button className={`${style} ${bgColor} ${color}`}>
         <Svg
           width={fontSize[size || "medium"] * 1.2}
           height={fontSize[size || "medium"] * 1.2}
           fill={Destructive ? "#8a8a8a" : "white"}
         />
-        <span>{children}</span>
+        <span className="mb-[1px] ml-[1px]">{children}</span>
       </button>
     );
   } else if (type === "IconOnly") {
     return (
-      <button
-      // css={css(style, {
-      //   backgroundColor: Destructive ? "#e6e6e6" : mainColor,
-      //   color: Destructive ? "#8a8a8a" : "white",
-      //   padding: fontSize[size || "medium"] / 1.5,
-      //   borderRadius: fontSize[size || "medium"] * 2,
-      // })}
-      >
+      <button className={`${style} ${bgColor} ${color}`}>
         <Svg
           width={fontSize[size || "medium"] * 1.5}
           height={fontSize[size || "medium"] * 1.5}
@@ -89,17 +41,7 @@ export const Button = ({ type, size, Destructive, children }: Props) => {
     );
   } else {
     return (
-      <div
-        className="bg-slate-500"
-        // css={css(style, {
-        //   backgroundColor: Destructive ? "#e6e6e6" : mainColor,
-        //   color: Destructive ? "#8a8a8a" : "white",
-        //   padding: `${fontSize[size || "medium"]}px ${
-        //     fontSize[size || "medium"] * 2
-        //   }px`,
-        //   borderRadius: fontSize[size || "medium"],
-        // })}
-      >
+      <div className={`${style} ${bgColor} ${color}`}>
         <span>{children}</span>
       </div>
     );
