@@ -5,14 +5,14 @@ module.exports = {
     extend: {
       colors: {
         main: "#0D689E",
-        sub1: "#84B4D4",
-        sub2: "#BAD5E8",
-        "gray-10": "#e6e6e6",
-        "gray-20": "#8a8a8a",
+        "sub-1": "#84B4D4",
+        "sub-2": "#BAD5E8",
+        "gray-1": "#e6e6e6",
+        "gray-2": "#8a8a8a",
+        "red-1": "#fcc6c5",
+        "red-2": "#ff5a57",
       },
     },
-
-    // extend: {},
   },
   plugins: [],
 };
