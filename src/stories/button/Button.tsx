@@ -20,13 +20,16 @@ export const Button = ({ type, size, Destructive, children }: Props) => {
     large: 18,
   };
 
-  const style = "flex items-center cursor-pointer px-3 py-2 rounded-xl";
+  const style = "flex items-center px-3 py-2 rounded-xl";
   const bgColor = Destructive ? "bg-gray-1" : "bg-main";
   const color = Destructive ? "text-gray-2" : "text-white";
+  const cursor = Destructive ? "cursor-default" : "cursor-pointer";
 
   if (type === "WithIcon") {
     return (
-      <button className={`${style} ${bgColor} ${color} ${fontSize[size]}`}>
+      <button
+        className={`${style} ${bgColor} ${color} ${fontSize[size]} ${cursor}`}
+      >
         <Svg
           width={svgSize[size] * 1.2}
           height={svgSize[size] * 1.2}
@@ -37,7 +40,9 @@ export const Button = ({ type, size, Destructive, children }: Props) => {
     );
   } else if (type === "IconOnly") {
     return (
-      <button className={`${style} ${bgColor} ${color} ${fontSize[size]}`}>
+      <button
+        className={`${style} ${bgColor} ${color} ${fontSize[size]} ${cursor}`}
+      >
         <Svg
           width={svgSize[size] * 1.2}
           height={svgSize[size] * 1.2}
@@ -47,7 +52,9 @@ export const Button = ({ type, size, Destructive, children }: Props) => {
     );
   } else {
     return (
-      <div className={`${style} ${bgColor} ${color} ${fontSize[size]}`}>
+      <div
+        className={`${style} ${bgColor} ${color} ${fontSize[size]} ${cursor}`}
+      >
         <span>{children}</span>
       </div>
     );
