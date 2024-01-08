@@ -14,8 +14,7 @@ export const Shadow = ({ type, colored }: Props) => {
         <div className="w-[120px] h-[120px] bg-white rounded-xl shadow-md"></div>
       );
     }
-  }
-  if (type === "Large") {
+  } else if (type === "Large") {
     if (colored) {
       return (
         <div className="w-[120px] h-[120px] bg-white rounded-xl shadow-lg-color"></div>
@@ -25,5 +24,7 @@ export const Shadow = ({ type, colored }: Props) => {
         <div className="w-[120px] h-[120px] bg-white rounded-xl shadow-lg"></div>
       );
     }
+  } else {
+    return <div></div>;
   }
 };
