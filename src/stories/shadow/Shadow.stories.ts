@@ -30,13 +30,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    // label: "This is information Shadow.",
+    type: "Default",
+    colored: false,
   },
 };
 
 export const Large: Story = {
   args: {
-    // label: "This is error Shadow.",
     type: "Large",
+    colored: false,
   },
 };

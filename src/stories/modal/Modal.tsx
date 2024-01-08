@@ -9,7 +9,7 @@ interface Props {
 
 export const Modal = ({ children, type, withIcon, withButton }: Props) => {
   return (
-    <div className="w-[270px] flex flex-col px-7 py-5 rounded-xl bg-white shadow">
+    <div className="w-[270px] flex flex-col px-7 py-5 rounded-xl bg-white shadow-md">
       {withIcon && <Svg fill="#0D689E" />}
       <div className="mt-4 text-xl font-bold">Modal Title</div>
       <div className="text-gray-2 leading-6 mt-4 mb-3 font-extralight">

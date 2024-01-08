@@ -1,23 +1,29 @@
 interface Props {
-  type?: string;
-  colored?: boolean;
+  type: string;
+  colored: boolean;
 }
 
 export const Shadow = ({ type, colored }: Props) => {
-  const color = colored ? `#0D689E20` : "rgb(0, 0, 0, 0.1)";
-
-  return (
-    <div
-      style={{
-        width: "120px",
-        height: "120px",
-        backgroundColor: "white",
-        borderRadius: "15px",
-        boxShadow:
-          type === "Large"
-            ? `0 4px 12px ${color}, 0 2px 4px ${color}`
-            : `0 2px 4px ${color}, 0 1px 2px ${color}`,
-      }}
-    ></div>
-  );
+  if (type === "Default") {
+    if (colored) {
+      return (
+        <div className="w-[120px] h-[120px] bg-white rounded-xl shadow-md-color"></div>
+      );
+    } else {
+      return (
+        <div className="w-[120px] h-[120px] bg-white rounded-xl shadow-md"></div>
+      );
+    }
+  }
+  if (type === "Large") {
+    if (colored) {
+      return (
+        <div className="w-[120px] h-[120px] bg-white rounded-xl shadow-lg-color"></div>
+      );
+    } else {
+      return (
+        <div className="w-[120px] h-[120px] bg-white rounded-xl shadow-lg"></div>
+      );
+    }
+  }
 };
